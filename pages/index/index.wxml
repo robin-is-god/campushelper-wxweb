@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<view class="container">
+<view class="search">
+    <navigator url="/pages/shopping/search/search" class="input">
+      <image class="icon" src="../../images/other/search.png"></image>
+      <text class="txt">点击搜索校园二手商品</text>
+    </navigator>
+  </view>
+    <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+    <swiper-item wx:for="{{newGoods}}" wx:key="gid">
+      <navigator url="/pages/shopping/good/good?gId={{item.gid}}">
+        <image src="{{item.goodPic}}" background-size="cover"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+  <view class="m-menu">
+    <navigator class="item" url="/pages/lostproperty/index/index">
+      <image src="../../images/index/lostproperty.png" background-size="cover"></image>
+      <text>失物寻物</text>
+    </navigator>
+    <navigator class="item" url="/pages/cooperation/index/index">
+      <image src="../../images/index/helpeach.png" background-size="cover"></image>
+      <text>求助信息</text>
+    </navigator>
+    <navigator class="item" url="/pages/shopping/category/category">
+      <image src="../../images/index/shopping.png" background-size="cover"></image>
+      <text>二手商城</text>
+    </navigator>
+    <navigator class="item" url="/pages/campusInfo/index/index">
+      <image src="../../images/index/campusinfo.png" background-size="cover"></image>
+      <text>校园资讯</text>
+    </navigator>
+    <navigator class="item" url="/pages/aroundInfo/index/index">
+      <image src="../../images/index/aroundinfo.png" background-size="cover"></image>
+      <text>周边游玩</text>
+    </navigator>
+  </view>
+
+  <view class="a-section a-topic" wx:if="topics.length > 0">
+    <view class="h">
+      <view>
+        <navigator url="/pages/topic/topic">
+          <text class="txt">最新资讯信息</text>
+        </navigator>
+      </view>
+    </view>
+    <view class="b">
+      <scroll-view scroll-x class="list">
+        <view class="item" wx:for="{{newCamInfo}}" wx:for-index="index" wx:for-item="item" wx:key="ciid">
+          <navigator url="/pages/campusInfo/detail/detail?ciId={{item.ciid}}">
+            <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
+            <view class="np">
+              <text class="name">{{item.title}}</text>
+            </view>
+            <text class="desc">{{item.content}}...</text>
+          </navigator>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

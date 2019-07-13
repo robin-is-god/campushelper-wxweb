@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="caminfo">
+    <view class="cam-item">
+      <view class="cam-hd">{{campusInfo.title}}</view> 
+      <view class="cam-hd">作者:{{campusInfo.loginName}} 时间:{{campusInfo.createTime}}</view>
+      <view class="v-image">
+        <image src='{{campusInfo.picUrl}}'></image>
+      </view>
+      <view class="item">
+          <text class="content">{{campusInfo.content}}</text>
+      </view>
+    </view>
+  </view>
+</view>

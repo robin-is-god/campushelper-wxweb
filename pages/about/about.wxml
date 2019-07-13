@@ -1,0 +1,58 @@
+<view class="container">
+
+  <view class="about-item">
+
+    <view class="item-left">
+      <label>项目名称: </label>
+       <text>{{campusHelperInfo.name}}</text> 
+    </view>
+
+  </view>
+
+  <view class="about-item">
+    <view class="item-left">
+      <label>项目地址: </label>
+       <text>{{campusHelperInfo.programAddress}}</text> 
+    </view>
+  </view>
+
+  <view class="about-item">
+    <view class="item-left">
+      <label>联系地址: </label>
+       <text>{{campusHelperInfo.address}}</text> 
+    </view>
+
+    <view class="item-right" bindtap="showLocation">
+      <image src="/images/other/ico-addr.png" class="right-icon"></image>
+    </view>
+  </view>
+
+  <view class="about-item">
+    <view class="item-left">
+      <label>电话号码:    </label>
+       <text>{{campusHelperInfo.linkPhone}}</text> 
+    </view>
+    <view class="item-right" bindtap="callPhone">
+      <image src="/images/other/telephone.png" class="right-icon"></image>
+    </view>
+  </view>
+
+  <view class="about-item">
+    <view class="item-left">
+      <label>联系QQ: </label>
+       <text>{{campusHelperInfo.qq}}</text> 
+    </view>
+    <view class="item-right">
+      <image src="/images/other/mobile.png" class="right-icon"></image>
+    </view>
+  </view>
+
+  <view class="about-item">
+    <view class="item-left">
+      <label>作者: </label>
+       <text>{{campusHelperInfo.author}}</text> 
+    </view>
+  </view>
+
+
+</view>

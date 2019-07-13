@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="no-login" wx:if="{{!hasLogin}}">
+    <view class="c">
+      <image src="../../../images/other/nocart.png" />
+      <text>还没有登录</text>
+      <button style="background-color:#A9A9A9" bindtap="goLogin">去登录</button>
+    </view>
+  </view>
+  <view class='login' wx:else>
+    <view class="no-cart" wx:if="{{1 == 2}}">
+      <view class="c">
+        <image src="../../../images/other/nocart.png" />
+        <text>购物车暂无商品！</text>
+      </view>
+    </view>
+    <view class="cart-view" wx:else>
+      <view class="list">
+        <view class="group-item">
+          <view class="goods">
+            <view class="item {{isEditCart ? 'edit' : ''}}" wx:for="{{cartGoods}}" wx:key="gid">
+              <view class="checkbox {{item.checked ? 'checked' : ''}}" bindtap="checkedItem" data-item-index="{{index}}"></view>
+              <view class="cart-goods">
+                <image class="img" src="{{item.picUrl}}"></image>
+                <view class="info">
+                  <view class="t">
+                    <text class="name">{{item.goodName}}</text>
+                    <text class="num">x{{item.goodStock}}</text>
+                  </view>
+                  <view class="b">
+                    <text class="price">￥{{item.goodPrice}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+      <view class="cart-bottom">
+        <view class="checkbox {{checkedAllStatus ? 'checked' : ''}}" bindtap="checkedAll">全选({{cartTotal.checkedGoodsCount}})</view>
+        <view class="total">{{!isEditCart ? '￥'+cartTotal.checkedGoodsAmount : ''}}</view>
+        <view class='action_btn_area'>
+          <view class="{{!isEditCart ? 'edit' : 'sure'}}" bindtap="editCart">{{!isEditCart ? '编辑' : '完成'}}</view>
+          <view class="delete" bindtap="deleteCart" wx:if="{{isEditCart}}">删除({{cartTotal.checkedGoodsCount}})</view>
+          <view class="checkout" bindtap="checkoutOrder" wx:if="{{!isEditCart}}">下单</view>
+          <!-- </view>  -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

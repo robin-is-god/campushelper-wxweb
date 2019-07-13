@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="cate-item">
+    <view class="b">
+      <view class="item">
+        <view>
+          <image class="img-user" src="{{detail.picturePath.length > 0?detail.picturePath:'/images/other/usercenter.png'}}" background-size="cover"></image>
+          <view class="title-time">
+            <text class="user-name">{{detail.nickName.length > 0?detail.nickName:detail.loginName}}</text>
+            <text class="time">{{detail.createTime}}</text>
+          </view>
+        </view>
+      <view class="infopcontent">
+        <text class="infotitle">{{detail.title}}</text>
+      </view>
+        <view class="pcontent">
+            <text class="content-text">{{detail.content}}</text>
+            <view class="content-multimedia" wx:if="{{detail.picUrl}}">
+                <image src="{{detail.picUrl}}"></image>
+            </view>
+        </view>
+        <view class="contact">联系方式：{{detail.contact}}</view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="comments" wx:if="{{comments.length > 0}}">
+    <view class="h">
+        <text class="t">留言({{comments.length}})</text>
+    </view>
+    <view class="b">
+      <view class="item" wx:for="{{comments}}" wx:key="loginName">
+        <view class="info">
+          <view class="user">
+            <image src="{{item.picturePath.length > 0?item.picturePath:'/images/other/usercenter.png'}}"></image>
+            <text>{{item.nickName != null?item.nickName:item.loginName}}</text>
+          </view>
+          <view class="time">{{item.createTime}}</view>
+        </view>
+        <view class="content">
+          {{item.content}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+    <view class="sendInfo">
+    <input class="l" bindinput="bindinputMesssage" value="{{message}}" placeholder="输入留言"></input>
+    <view class="r" value="{{message}}" bindtap="submitOrder">发送</view>
+  </view>
+
+</view>

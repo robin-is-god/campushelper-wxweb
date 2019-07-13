@@ -1,0 +1,43 @@
+<view class="container">
+  <view class="caminfo">
+    <view class="cam-item">
+      <view class="cam-list">
+        <navigator class="item" url="/pages/lostproperty/addInfo/addInfo">
+          <image class="img" src="/images/index/lostproperty.png"></image>
+          <view class="info">
+            <view class="name">发布失物寻物信息</view>
+            <view class="subtitle">点击此处发布失物寻物信息</view>
+          </view>
+        </navigator>
+        <navigator class="item" url="/pages/aroundInfo/addInfo/addInfo">
+          <image class="img" src="/images/index/aroundinfo.png"></image>
+          <view class="info">
+            <view class="name">发布周边资讯信息</view>
+            <view class="subtitle">点击此处发布周边资讯信息</view>
+          </view>
+        </navigator>
+        <navigator class="item" url="/pages/cooperation/addInfo/addInfo">
+          <image class="img" src="/images/index/helpeach.png"></image>
+          <view class="info">
+            <view class="name">发布求助信息</view>
+            <view class="subtitle">点击此处发布求助信息</view>
+          </view>
+        </navigator>
+        <navigator class="item" url="/pages/shopping/addGood/addGood">
+          <image class="img" src="/images/index/shopping.png"></image>
+          <view class="info">
+            <view class="name">发布商品信息</view>
+            <view class="subtitle">点击此处发布商品信息</view>
+          </view>
+        </navigator>
+        <navigator class="item" url="/pages/campusInfo/addInfo/addInfo">
+          <image class="img" src="/images/index/campusinfo.png"></image>
+          <view class="info">
+            <view class="name">发布校园资讯信息</view>
+            <view class="subtitle">点击此处发布校园资讯信息</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="no-footprint" wx:if="{{goodList.length <= 0}}">
+    <view class="c">
+      <image src="/images/other/noinfo.png" />
+      <text>没有发布商品信息</text>
+    </view>
+  </view>
+
+  <view class="footprint" wx:if="{{goodList.length > 0}}">
+    <view class="day-item" wx:for="{{goodList}}" wx:key="gId" wx:for-index="index">
+      <view class="day-hd" >{{item.createTime}}</view>
+      <view class="day-list">
+        <view class="item" bindtouchstart="touchStart" bindtouchend="touchEnd"  data-index="{{index}}" bindtap="deleteItem">
+          <image class="img" src="{{item.goodPic}}"></image>
+          <view class="info">
+            <view class="name">{{item.goodName}}</view>
+            <view class="subtitle">{{item.goodDescription}}...</view>
+            <view class="price">￥{{item.goodPrice}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

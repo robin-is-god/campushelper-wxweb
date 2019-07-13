@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="no-order" wx:if="{{notEvaList.length <= 0}}">
+    <view class="c">
+      <image src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/noCart-a8fe3f12e5.png" />
+      <text>还没有任何未评价订单呢</text>
+    </view>
+  </view>
+
+  <view class="orders" wx:if="{{notEvaList.length > 0}}">
+    <navigator url="/pages/shopping/comment/addComment/addComment?oid={{item.oid}}&gid={{item.gId}}&goodPic={{item.goodPic}}&goodName={{item.goodName}}" class="order" open-type="redirect" wx:for="{{notEvaList}}" wx:key="oid">
+      <view class="h">
+        <view class="l">订单编号：{{item.seriaNum}}</view>
+        <view class="r">未评价</view>
+      </view>
+      <view class="goods">
+        <view class="img">
+          <image src="{{item.goodPic}}"></image>
+        </view>
+        <view class="info">
+          <text class="name">{{item.goodName}}</text>
+          <text class="number">x{{item.quantity}}</text>
+        </view>
+        <view class="status"></view>
+      </view>
+      <view class="b">
+        <view class="l">总价：￥{{item.total}}</view>
+      </view>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+<view class="container">
+
+
+  <view class="fb-info">
+    <view class="label">求助标题</view>
+    <view class="info-box">
+      <input class="info" placeholder="请输入求助标题" bindinput="titleInput" value="{{title}}" />
+      <image class="clear-icon" src="/images/other/clear_input.png" wx:if="{{ title.length > 0 }}" catchtap="clearTitle"></image>
+    </view>
+  </view>
+  <view class="fb-info">
+    <view class="label">联系方式</view>
+    <view class="info-box">
+      <input class="info" placeholder="输入你联系方式(例:QQ-2423445420)" bindinput="contactInput" value="{{contact}}" />
+      <image class="clear-icon" src="/images/other/clear_input.png" wx:if="{{ contact.length > 0 }}" catchtap="clearContact"></image>
+    </view>
+  </view>
+
+  <view class="fb-body">
+    <textarea class="content" placeholder="请输入求助内容" bindinput="contentInput" maxlength="300" auto-focus="true" value="{{content}}" />
+    <view class="weui-uploader__files" id="uploaderFiles">
+      <block wx:for="{{files}}" wx:key="this">
+        <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+          <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+        </view>
+      </block>
+      <view class="weui-uploader__input-box" wx:if="{{ files.length < 2 }}">
+        <view class="weui-uploader__input" bindtap="chooseImage"></view>
+      </view>
+    </view>
+    <view class="text-count">{{contentLength}}/300</view>
+  </view>
+
+  <view class="fb-btn" bindtap="submitFeedback">提交</view>
+</view>

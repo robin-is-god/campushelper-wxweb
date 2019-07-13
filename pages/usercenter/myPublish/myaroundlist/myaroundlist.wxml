@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="no-footprint" wx:if="{{aroundList.length <= 0}}">
+    <view class="c">
+      <image src="/images/other/noinfo.png" />
+      <text>没有发布周边信息</text>
+    </view>
+  </view>
+
+  <view class="footprint" wx:if="{{aroundList.length > 0}}">
+    <view class="day-item" wx:for="{{aroundList}}" wx:key="aiId" wx:for-index="index">
+      <view class="day-hd" >{{item.createTime}}</view>
+      <view class="day-list">
+        <view class="item" bindtouchstart="touchStart" bindtouchend="touchEnd"  data-index="{{index}}" bindtap="deleteItem">
+          <image class="img" src="{{item.picUrl.length > 0?item.picUrl:'/images/other/nofig.jpg'}}"></image>
+          <view class="info">
+            <view class="name">{{item.title}}</view>
+            <view class="subtitle">{{item.content}}...</view>
+            <view class="price">{{item.type}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

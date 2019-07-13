@@ -1,0 +1,43 @@
+<view class="container">
+  <view class="no-footprint" wx:if="{{propertyList.length <= 0}}">
+    <view class="c">
+      <image src="/images/other/noinfo.png" />
+      <text>没有发布失物寻物信息</text>
+    </view>
+  </view>
+
+  <view class="share-pop-box" hidden="{{!openAttr}}">
+    <view class="share-pop">
+      <view class="close" bindtap="closeAttr">
+        <image class="icon" src="/images/other/icon_close.png"></image>
+      </view>
+      <view class='share-info'>
+        <button class="sharebtn" bindtap="deleteInfo">
+          <image class='sharebtn_image' src='/images/other/deleteInfo.png'></image>
+          <view class='sharebtn_text'>删除此记录</view>
+        </button>
+        <button  class="savesharebtn" bindtap="setSolve">
+          <image class='sharebtn_image' src='/images/other/setSolve.png'></image>
+          <view class='sharebtn_text'>设置解决状态</view>
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <view class="footprint" wx:if="{{propertyList.length > 0}}">
+    <view class="day-item" wx:for="{{propertyList}}" wx:key="pid" wx:for-index="index">
+      <view class="day-hd" >{{item.createTime}}</view>
+      <view class="day-list">
+        <view class="item" bindtouchstart="touchStart" bindtouchend="touchEnd"  data-index="{{index}}" bindtap="changeItem">
+          <image class="img" src="{{item.propertyPicture.length > 0?item.propertyPicture:'/images/other/nofig.jpg'}}"></image>
+          <view class="info">
+            <view class="name">{{item.propertyName}}</view>
+            <view class="subtitle">{{item.detail}}...</view>
+            <view class="price">{{item.solve==false?'未解决':'已解决'}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

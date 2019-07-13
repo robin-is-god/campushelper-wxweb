@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="cate-nav">
+    <scroll-view scroll-x="true" class="cate-nav-body" style="width: 750rpx;" scroll-left="{{scrollLeft}}">
+      <view wx:for="{{navList}}" class="item {{ goodType == item.goodType ? 'active' : ''}}" wx:key="goodType" data-type="{{item.goodType}}" data-index="{{index}}" bindtap="switchCate">
+        <view class="name">{{item.goodType}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" style="height:{{scrollHeight}};">
+
+    <view class="cate-item">
+      <view class="b">
+        <navigator class="item {{(iindex + 1) % 2  == 0 ? 'item-b' : ''}}" url="/pages/shopping/good/good?gId={{iitem.gid}}" wx:for="{{goodsList}}" wx:key="gid" wx:for-item="iitem" wx:for-index="iindex">
+          <image class="img" src="{{iitem.goodPic}}" background-size="cover"></image>
+          <text class="name">{{iitem.goodName}}</text>
+          <text class="price">￥{{iitem.goodPrice}}</text>
+        </navigator>
+      </view>
+    </view>
+  </scroll-view>
+</view>

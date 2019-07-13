@@ -1,0 +1,93 @@
+<view class="container">
+  <view class="address-box">
+    <view class="address-item" bindtap="selectAddress" wx:if="{{checkedAddress.aid > 0}}">
+      <view class="l">
+        <text class="name">{{checkedAddress.name}}</text>
+        <text class="default" wx:if="{{checkedAddress.defaulted}}">默认</text>
+      </view>
+      <view class="m">
+        <text class="mobile">{{checkedAddress.phone}}</text>
+        <text class="address">{{checkedAddress.address}}</text>
+      </view>
+      <view class="r">
+        <image src="/images/other/address_right.png"></image>
+      </view>
+    </view>
+    <view class="address-item address-empty" bindtap="selectAddress" wx:else>
+      <view class="m">
+        还没有收货地址，去添加
+      </view>
+      <view class="r">
+        <image src="/images/other/address_right.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="goods-items">
+    <view class="item" wx:for="{{checkedGoodsList}}" wx:key="id">
+      <view class="img">
+        <image src="../../../images/index/home1.jpg"></image>
+      </view>
+      <view class="info">
+        <view class="t">
+          <text class="name">{{item.goodName}}</text>
+          <text class="number">x{{item.quantity}}</text>
+        </view>
+        <view class="b">￥{{item.goodPrice}}</view>
+      </view>
+    </view>
+  </view>
+
+  <action-sheet hidden="{{passwordInputHidden}}" bindchange="passwordInputHidden">
+    <view class='password-input'>
+      <view>
+        <text style="display:{{inputPassword[0]?'':'none'}}"></text>
+      </view>
+      <view>
+        <text style="display:{{inputPassword[1]?'':'none'}}"></text>
+      </view>
+      <view>
+        <text style="display:{{inputPassword[2]?'':'none'}}"></text>
+      </view>
+      <view>
+        <text style="display:{{inputPassword[3]?'':'none'}}"></text>
+      </view>
+      <view>
+        <text style="display:{{inputPassword[4]?'':'none'}}"></text>
+      </view>
+      <view>
+        <text style="display:{{inputPassword[5]?'':'none'}}"></text>
+      </view>
+    </view>
+    <view class='tips'>请输入支付密码
+      <text>(￥{{goodsTotalPrice}})</text>
+    </view>
+    <view class='keyboard'>
+      <view class='left number'>
+      <view data-key="1" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>1</view>
+      <view data-key="2" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>2</view>
+      <view data-key="3" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>3</view>
+      <view data-key="4" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>4</view>
+      <view data-key="5" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>5</view>
+      <view data-key="6" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>6</view>
+      <view data-key="7" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>7</view>
+      <view data-key="8" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>8</view>
+      <view data-key="9" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>9</view>
+      <view data-key="X" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>X</view>
+      <view data-key="0" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>0</view>
+      <view data-key="." hover-class='active' hover-stay-time='100' bindtap='inputPassword'>.</view>
+    </view>
+    <view class='right ctr-btn'>
+     <view class='ctr-btn-item' hover-class='active' hover-stay-time='100' bindtap='clear'>
+      <label class='iconfont icon-shanchu'>清除</label>
+     </view>
+    <view class='ctr-btn-item' hover-class='active' hover-stay-time='100' bindtap='passwordInputHidden'>取消</view>
+    </view>
+  </view>
+</action-sheet>
+
+  <view class="order-total">
+    <view class="l">总价：￥{{goodsTotalPrice}}</view>
+    <view class="r" bindtap="submitOrder">去付款</view>
+  </view>
+</view>

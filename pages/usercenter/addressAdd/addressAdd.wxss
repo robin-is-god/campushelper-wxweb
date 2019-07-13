@@ -1,0 +1,83 @@
+page {
+  height: 100%;
+  background: #f4f4f4;
+}
+
+.add-address .add-form {
+  background: #fff;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.add-address .form-item {
+  height: 116rpx;
+  padding-left: 31.25rpx;
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  padding-right: 31.25rpx;
+}
+
+.add-address .input {
+  flex: 1;
+  height: 44rpx;
+  line-height: 44rpx;
+  overflow: hidden;
+  /* border-style:solid;
+  border-width:1px; */
+}
+
+.add-address .form-default {
+  border-bottom: 1px solid #d9d9d9;
+  height: 96rpx;
+  background: #fafafa;
+  padding-top: 28rpx;
+  font-size: 28rpx;
+}
+
+.default-input {
+  margin: 0 auto;
+  display: block;
+  width: 240rpx;
+  height: 40rpx;
+  padding-left: 50rpx;
+  line-height: 40rpx;
+  background: url(http://localhost:8080/image/Zc228EC2S5Nda6b8540d42c852b832c4678f79610a3a.png) 1rpx -448rpx no-repeat;
+  background-size: 38rpx 486rpx;
+  font-size: 28rpx;
+}
+
+.default-input.selected {
+  background: url(http://localhost:8080/image/Zc228EC2S5Nda6b8540d42c852b832c4678f79610a3a.png) 0 -192rpx no-repeat;
+  background-size: 38rpx 486rpx;
+}
+
+.add-address .btns {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  height: 100rpx;
+  width: 100%;
+}
+
+.add-address .cannel, .add-address .save {
+  flex: 1;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+}
+
+.add-address .cannel {
+  background: #333;
+}
+
+.add-address .save {
+  background: #b4282d;
+}

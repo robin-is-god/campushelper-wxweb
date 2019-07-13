@@ -1,0 +1,43 @@
+<view class="container">
+
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      <view class="fb-type">
+        <view class="type-label">{{array[index]}}</view>
+        <image class="type-icon" src="../../../images/other/down.png"></image>
+      </view>
+    </view>
+  </picker>
+
+  <view class="fb-info">
+    <view class="label">失物名称</view>
+    <view class="info-box">
+      <input class="info" placeholder="请输入失物名称" bindinput="propertyNameInput" value="{{propertyName}}" />
+      <image class="clear-icon" src="/images/other/clear_input.png" wx:if="{{ propertyName.length > 0 }}" catchtap="clearPropertyName"></image>
+    </view>
+  </view>
+  <view class="fb-info">
+    <view class="label">联系方式</view>
+    <view class="info-box">
+      <input class="info" placeholder="输入你联系方式(例:QQ-2423445420)" bindinput="contactInput" value="{{contact}}" />
+      <image class="clear-icon" src="/images/other/clear_input.png" wx:if="{{ contact.length > 0 }}" catchtap="clearContact"></image>
+    </view>
+  </view>
+
+  <view class="fb-body">
+    <textarea class="content" placeholder="请输入寻找失物/失主的细致描述内容" bindinput="contentInput" maxlength="200" auto-focus="true" value="{{content}}" />
+    <view class="weui-uploader__files" id="uploaderFiles">
+      <block wx:for="{{files}}" wx:key="this">
+        <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+          <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+        </view>
+      </block>
+      <view class="weui-uploader__input-box" wx:if="{{ files.length < 2 }}">
+        <view class="weui-uploader__input" bindtap="chooseImage"></view>
+      </view>
+    </view>
+    <view class="text-count">{{contentLength}}/200</view>
+  </view>
+
+  <view class="fb-btn" bindtap="submitFeedback">提交</view>
+</view>

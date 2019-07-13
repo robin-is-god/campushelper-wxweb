@@ -1,0 +1,60 @@
+page {
+  background: #fff;
+  min-height: 100%;
+}
+
+.container {
+  background: #fff;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.caminfo {
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  border-top: 1px solid #e1e1e1;
+}
+
+.cam-item {
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.cam-hd {
+  text-align: center;
+  height: 74rpx;
+  width: 100%;
+  line-height: 74rpx;
+  background: #fff;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.item {
+  margin-top: 30rpx;
+  margin:30rpx 15rpx 0 15rpx;
+  background: #fff;
+}
+.item .info .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  margin-bottom: 14rpx;
+  color: #333333;
+}
+.v-image {
+  width: 750rpx;
+  height: 300rpx;
+}
+
+.v-image image {
+  width: 100%;
+  height: 300rpx;
+}
+/* pages/campusInfo/detail/detail.wxss */

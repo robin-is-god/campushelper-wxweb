@@ -1,0 +1,96 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/auth/login/login",
+    "lib/zanui-weapp/capsule/index",
+    "pages/lostproperty/index/index",
+    "pages/shopping/good/good",
+    "pages/shopping/catalog/catalog",
+    "pages/shopping/category/category",
+    "pages/shopping/tmpcart/tmpcart",
+    "pages/shopping/search/search",
+    "lib/wxParse/wxParse",
+    "pages/shopping/shop/shop",
+    "pages/usercenter/index/index",
+    "pages/lostproperty/addInfo/addInfo",
+    "pages/auth/accountLogin/accountLogin",
+    "pages/shopping/checkout/checkout",
+    "pages/auth/register/register",
+    "pages/usercenter/address/address",
+    "pages/usercenter/addressAdd/addressAdd",
+    "pages/campusInfo/index/index",
+    "pages/campusInfo/detail/detail",
+    "pages/aroundInfo/index/index",
+    "pages/cooperation/index/index",
+    "pages/aroundInfo/addInfo/addInfo",
+    "pages/cooperation/addInfo/addInfo",
+    "pages/addInfo/addInfo",
+    "pages/auth/reset/reset",
+    "pages/shopping/order/detail/detail",
+    "pages/shopping/order/index/index",
+    "pages/shopping/addGood/addGood",
+    "pages/shopping/comment/addComment/addComment",
+    "pages/shopping/comment/index/index",
+    "pages/lostproperty/detail/detail",
+    "pages/usercenter/myPublish/index/index",
+    "pages/usercenter/mine/mine",
+    "pages/usercenter/myPublish/mylplist/mylplist",
+    "pages/usercenter/myPublish/mygoodlist/mygoodlist",
+    "pages/usercenter/myPublish/mycoolist/mycoolist",
+    "pages/usercenter/myPublish/myaroundlist/myaroundlist",
+    "pages/cooperation/detail/detail",
+    "pages/aroundInfo/detail/detail",
+    "pages/shopping/payResult/payResult",
+    "pages/about/about",
+    "pages/campusInfo/addInfo/addInfo"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "校园生活帮",
+    "enablePullDownRefresh": true,
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "backgroundColor": "#fafafa",
+    "borderStyle": "white",
+    "selectedColor": "#AB956D",
+    "color": "#666",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/other/home.png",
+        "selectedIconPath": "images/other/home@selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/shopping/catalog/catalog",
+        "iconPath": "images/other/category.png",
+        "selectedIconPath": "images/other/category@selected.png",
+        "text": "二手商品"
+      },
+      {
+        "pagePath": "pages/addInfo/addInfo",
+        "iconPath": "images/other/message.png",
+        "selectedIconPath": "images/other/message@selected.png",
+        "text": "发布信息"
+      },
+      {
+        "pagePath": "pages/usercenter/index/index",
+        "iconPath": "images/other/my.png",
+        "selectedIconPath": "images/other/my@selected.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

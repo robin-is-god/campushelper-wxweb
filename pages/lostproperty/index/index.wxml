@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="cate-nav">
+    <scroll-view scroll-x="true" class="cate-nav-body" style="width: 750rpx;" scroll-left="{{scrollLeft}}">
+      <view class="item{{ selected == 0 ? '.active' :''}}" data-findorlost="0" bindtap="switchCate">
+        <view class="name">失物寻找</view>
+      </view>
+      <view class="item{{ selected == 1 ? '.active' :''}}" data-findorlost="1" bindtap="switchCate">
+        <view class="name">寻找失主</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="cate-item">
+    <view class="b">
+      <navigator class="item" url="/pages/lostproperty/detail/detail?pid={{item.pid}}" wx:for="{{list}}" wx:key="pid"  wx:for-item="item" wx:for-index="index">
+      <view>
+        <image class="img-user" src="{{item.picturePath.length > 0?item.picturePath:'/images/other/usercenter.png'}}" background-size="cover"></image>
+        <view class="title-time">
+          <text class="user-name">{{item.nickName.length > 0?item.nickName:item.loginName}}</text>
+          <text class="time">{{item.createTime}}</text>
+        </view>
+          <text class="title">{{item.solve == 0?'未解决':'已解决'}}</text>
+      </view>
+      <view class="infopcontent">
+        <text class="infotitle">{{item.propertyName}}</text>
+      </view>
+      <view class="content">
+          <text class="content-text">{{item.detail}}</text>
+          <view class="content-multimedia" wx:if="{{item.propertyPicture}}">
+              <image src="{{item.propertyPicture}}"></image>
+          </view>
+      </view>
+      <view class="contact">联系方式：{{item.contact}}</view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 发布信息 -->
+  <navigator url="/pages/lostproperty/addInfo/addInfo">
+    <view class="add-wrap"hover-class="plus-hover">
+      <image src="/images/other/add.png"></image>
+    </view>
+  </navigator>
+</view>

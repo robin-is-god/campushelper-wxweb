@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="cate-nav">
+    <scroll-view scroll-x="true" class="cate-nav-body" style="width: 750rpx;" scroll-left="{{scrollLeft}}">
+      <view wx:for="{{navList}}" class="item {{ type == item.type ? 'active' : ''}}" wx:key="type" data-type="{{item.type}}" data-index="{{index}}" bindtap="switchCate">
+        <view class="name">{{item.type}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="cate-item">
+    <view class="b">
+      <navigator class="item" url="/pages/aroundInfo/detail/detail?aiid={{item.aiid}}" wx:for="{{aroundList}}" wx:key="aiid" wx:for-item="item" wx:for-index="index">
+      <view>
+        <image class="img-user" src="{{item.picturePath.length > 0?item.picturePath:'/images/other/usercenter.png'}}" background-size="cover"></image>
+        <view class="title-time">
+          <text class="user-name">{{item.nickName.length > 0?item.nickName:item.loginName}}</text>
+          <text class="time">{{item.createTime}}</text>
+        </view>
+      </view>
+      <view class="infopcontent">
+        <text class="infotitle">{{item.title}}</text>
+      </view>
+      <view class="content">
+          <text class="content-text">{{item.content}}</text>
+          <view class="content-multimedia" wx:if="{{item.picUrl}}">
+              <image src="{{item.picUrl}}"></image>
+          </view>
+      </view>
+      <view class="contact">联系方式：{{item.contact}}</view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 发布信息 -->
+  <navigator url="/pages/aroundInfo/addInfo/addInfo">
+    <view class="add-wrap"hover-class="plus-hover">
+      <image src="../../../images/other/add.png"></image>
+    </view>
+  </navigator>
+</view>

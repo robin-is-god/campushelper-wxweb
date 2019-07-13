@@ -1,0 +1,63 @@
+<view class="container">
+  <view class="profile-info" bindtap="goLogin">
+    <image class="avatar" src="{{userInfo.picturePath.length > 0?userInfo.picturePath:'/images/other/usercenter.png'}}"></image>
+    <view class="info">
+      <text class="name">{{userInfo.nickName.length > 0?userInfo.nickName:userInfo.loginName}}</text>
+    </view>
+  </view>
+
+  <view class='separate'></view>
+
+  <view class='user_area'>
+    <view class='user_row' bindtap='goUserInfo'>
+      <view class='user_row_left'>我的信息</view>
+      <image class='user_row_right' src='/images/other/goright.png'></image>
+    </view>
+    <view class='user_column'>
+      <view class='user_column_item' bindtap='goOrder'>
+        <image class='user_column_item_image' src='/images/other/receive.png'></image>
+        <view class='user_column_item_text'>商品订单</view>
+      </view>
+      <view class='user_column_item' bindtap='goComment'>
+        <text class="user_column_item_badge" wx:if="{{uncomment}}"></text>
+        <image class='user_column_item_image' src='/images/other/comment.png'></image>
+        <view class='user_column_item_text'>商品评价</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='separate'></view>
+
+  <view class='user_row'>
+    <view class='user_row_left'>个人信息</view>
+  </view>
+  <view class='user_column'>
+    <view class='user_column_item' bindtap='goAddress'>
+      <image class='user_column_item_image' src='/images/other/address.png'></image>
+      <view class='user_column_item_text'>地址管理</view>
+    </view>
+
+    <view class='user_column_item' bindtap='goReset'>
+      <image class='user_column_item_image' src='/images/other/password.png'></image>
+      <view class='user_column_item_text'>修改密码</view>
+    </view>
+  </view>
+  <view class='separate'></view>
+
+  <view class='user_row'>
+    <view class='user_row_left'>其他</view>
+  </view>
+  <view class='user_column'>
+
+    <view class='user_column_item' bindtap='goMyPublish'>
+      <image class='user_column_item_image' src='/images/other/mypublish.png'></image>
+      <view class='user_column_item_text'>我的发布</view>
+    </view>
+    <view class='user_column_item' bindtap='aboutUs'>
+      <image class='user_column_item_image' src='/images/other/about_us.png'></image>
+      <view class='user_column_item_text'>关于校园生活帮</view>
+    </view>
+  </view>
+
+  <view class="logout" wx:if="{{hasLogin}}" bindtap="exitLogin">退出登录</view>
+</view>

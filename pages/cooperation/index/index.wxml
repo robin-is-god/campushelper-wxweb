@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="cate-item">
+    <view class="b">
+      <navigator class="item" url="/pages/cooperation/detail/detail?cooid={{item.cooid}}" wx:for="{{cooInfoList}}" wx:key="cooid" wx:for-item="item" wx:for-index="index">
+      <view>
+        <image class="img-user" src="{{item.picturePath.length > 0?item.picturePath:'/images/other/usercenter.png'}}" background-size="cover"></image>
+        <view class="title-time">
+          <text class="user-name">{{item.nickName.length > 0?item.nickName:item.loginName}}</text>
+          <text class="time">{{item.createTime}}</text>
+        </view>
+        <text class="title">{{item.solve == 0?'未解决':'已解决'}}</text>
+      </view>
+      <view class="infopcontent">
+        <text class="infotitle">{{item.title}}</text>
+      </view>
+      <view class="content">
+          <text class="content-text">{{item.content}}</text>
+          <view class="content-multimedia" wx:if="{{item.picUrl}}">
+              <image src="{{item.picUrl}}"></image>
+          </view>
+      </view>
+      <view class="contact">联系方式：{{item.contact}}</view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 发布信息 -->
+  <navigator url="/pages/cooperation/addInfo/addInfo">
+    <view class="add-wrap"hover-class="plus-hover">
+      <image src="../../../images/other/add.png"></image>
+    </view>
+  </navigator>
+</view>

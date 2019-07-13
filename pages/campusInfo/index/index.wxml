@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="caminfo" wx:if="{{campusInfoList.length > 0}}">
+    <view class="cam-item" wx:for="{{campusInfoList}}" wx:key="ciId" data-ciid="{{item.ciid}}"  bindtap="campusInfoDetail">
+      <view class="cam-hd">{{item.title}}</view>
+      <view class="cam-list">
+        <view class="item">
+          <image class="img" src="{{item.picUrl}}"></image>
+          <view class="info">
+            <view class="name">发布人:{{item.loginName}}</view>
+            <view class="subtitle">{{item.content}}...</view>
+            <view class="price">{{item.createTime}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="caminfo">
+    <view class="cam-item">
+      <view class="cam-list">
+        <navigator class="item" url="/pages/usercenter/myPublish/mylplist/mylplist">
+          <image class="img" src="/images/index/lostproperty.png"></image>
+          <view class="info">
+            <view class="name">我发布的失物寻物信息</view>
+            <view class="subtitle">点击此处查看我发布的失物寻物信息</view>
+          </view>
+        </navigator>
+        <navigator class="item" url="/pages/usercenter/myPublish/myaroundlist/myaroundlist">
+          <image class="img" src="/images/index/aroundinfo.png"></image>
+          <view class="info">
+            <view class="name">我发布的周边资讯信息</view>
+            <view class="subtitle">点击此处查看我发布的周边资讯信息</view>
+          </view>
+        </navigator>
+        <navigator class="item" url="/pages/usercenter/myPublish/mycoolist/mycoolist">
+          <image class="img" src="/images/index/helpeach.png"></image>
+          <view class="info">
+            <view class="name">我发布的求助信息</view>
+            <view class="subtitle">点击此处查看我发布的求助信息</view>
+          </view>
+        </navigator>
+        <navigator class="item" url="/pages/usercenter/myPublish/mygoodlist/mygoodlist">
+          <image class="img" src="/images/index/shopping.png"></image>
+          <view class="info">
+            <view class="name">我发布的商品信息</view>
+            <view class="subtitle">点击此处查看我发布的商品信息</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

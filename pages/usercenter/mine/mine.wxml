@@ -1,0 +1,26 @@
+<view class="page centerPage-wrap" id="userCenterPage" data-router="userCenterPage">
+  <view class="centerPage-user-info">
+    <view class="js-change-cover" bindtap="chooseImage">
+      <image class="cover-thumb" src="{{userInfo.picturePath.length > 0?userInfo.picturePath:'/images/other/usercenter.png'}}"></image>
+      <label class="ico-moon icon-rightarrow"></label>
+    </view>
+  </view>
+  <view class="centerPage-user-info">
+    <view class="centerPage-info-item">
+      <label>昵称：</label>
+      <label class="ico-moon icon-rightarrow"></label>
+      <input class="nickname" placeholder="请输入您的昵称" value="{{userInfo.nickName}}" bindinput="bindinputNickName"/>
+    </view>
+    <view class="centerPage-info-item">
+      <label>支付密码：</label>
+      <label class="ico-moon icon-rightarrow"></label>
+      <input class="nickname" placeholder="请输入您的6位支付密码" value="{{userInfo.payPass}}" bindinput="bindinputPayPass" />
+    </view>
+    <view class="centerPage-info-item">
+      <label>手机：</label>
+      <label class="ico-moon icon-rightarrow"></label>
+      <input class="nickname" placeholder="请输入您的手机号" value="{{userInfo.phone}}" bindinput="bindinputMobile" />
+    </view>
+  </view>
+</view>
+<view class="centerPage-save-btn" bindtap="saveUserInfo">保存</view>

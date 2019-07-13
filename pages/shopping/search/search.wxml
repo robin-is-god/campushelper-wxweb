@@ -1,0 +1,44 @@
+<scroll-view class="container" style="height: 100%;">
+  <view class="search-header">
+    <view class="input-box">
+      <image class="icon" src="../../../images/other/search.png"></image>
+      <input name="input" class="keywrod" focus="true" value="{{keyword}}" confirm-type="search" bindinput="inputChange"  bindconfirm="onKeywordConfirm" placeholder="{{keyword}}" />
+      <image class="del" wx:if="{{keyword}}" bindtap="clearKeyword" src="../../../images/other/cancal.png"></image>
+    </view>
+    <view class="right" bindtap="closeSearch">取消</view>
+  </view>
+  <view class="no-search" wx:if="{{ !searchStatus}}">
+    <view class="shelper-list" wx:if="{{keyword}}">
+      <view class="item" hover-class="navigator-hover" wx:for="{{helpKeyword}}" wx:key="gid" bindtap="onKeywordTap" data-keyword="{{item.goodName}}">{{item.goodName}}</view>
+    </view>
+  </view>
+  <view class="search-result" wx:if="{{ searchStatus && goodsList.length}}">
+    <view class="sort">
+      <view class="sort-box">
+        <view class="item {{currentSortType == 'goodName' ? 'active' : ''}}" bindtap="openSortFilter" id="defaultSort">
+          <text class="txt">综合</text>
+        </view>
+        <view class="item by-price {{currentSortType == 'goodPrice' ? 'active' : ''}} {{currentSortOrder == 'asc'  ? 'asc' : 'desc'}}" bindtap="openSortFilter" id="priceSort">
+          <text class="txt">价格</text>
+        </view>
+        <view class="item {{currentSortType == 'goodType' ? 'active' : ''}}" bindtap="openSortFilter" id="categoryFilter">
+          <text class="txt">分类</text>
+        </view>
+      </view>
+    </view>
+    <view class="cate-item">
+      <view class="b">
+        <navigator class="item {{(iindex + 1) % 2 == 0 ? 'item-b' : ''}}" url="/pages/shopping/good/good?gId={{iitem.gid}}" wx:for="{{goodsList}}" wx:key="gid" wx:for-item="iitem" wx:for-index="iindex">
+          <image class="img" src="../../../images/index/home1.jpg" background-size="cover"></image>
+          <text class="name">{{iitem.goodName}}</text>
+          <text class="price">￥{{iitem.goodPrice}}</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <view class="search-result-empty" wx:if="{{!goodsList.length && searchStatus}}">
+    <image class="icon" src="../../../images/other/searchfail.png"></image>
+    <text class="text">您寻找的商品不存在，请重新搜索！</text>
+  </view>
+</scroll-view>
