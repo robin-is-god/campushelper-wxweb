@@ -56,7 +56,7 @@
 <view class="attr-pop-box" hidden="{{!openAttr}}">
   <view class="attr-pop">
     <view class="close" bindtap="closeAttr">
-      <image class="icon" src="/images/other/icon_close.png"></image>
+      <image class="icon" src="{{goods.goodPic}}"></image>
     </view>
     <view class="img-info">
       <image class="img" src="/images/index/home1.jpg"></image>
